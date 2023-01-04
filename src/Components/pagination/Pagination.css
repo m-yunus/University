@@ -1,0 +1,32 @@
+.pagination{
+    margin: 50px 0 0 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.pagination li{
+
+border: 1px solid gray;
+width: 30px;
+height: 30px;
+margin: 0 5px;
+align-items: center;
+cursor: pointer;
+transition: all ease 0.3s;
+padding: 8px;
+visibility: visible;
+}
+.pagination li:hover{
+    background-color: orange;
+}
+.page{
+    display: flex;
+}
+
+.notvisible_page{
+    display: flex;
+visibility: hidden;
+}

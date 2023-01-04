@@ -1,0 +1,42 @@
+.serchbar-input{
+    border-radius: 4px;
+    height: 3rem;
+    width: 45rem;
+    box-shadow: 0px 0px 20px rgb(0, 0, 29%);
+    padding: 0 0 0 45px;
+    outline: none;
+    border: none;
+   left: 2rem;
+
+    
+}
+.ityped-intro{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 66px;
+    
+    
+}
+.search_bar{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.intro{
+    margin-top: 3rem;
+    display: flex;
+    top: 6rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    
+}
+.ityped-intro h1{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}

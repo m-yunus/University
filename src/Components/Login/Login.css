@@ -1,0 +1,18 @@
+
+.login-left{
+    background: url("../../images/ipad-itunes-rainbow-el-wallpaper-thumb.jpg");
+    background-size: cover;
+}
+.login-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width:900px) {
+        .login-left{
+            display: flex;
+        width: 50%;
+        height: auto;
+        }
+
+}

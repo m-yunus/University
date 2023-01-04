@@ -1,0 +1,82 @@
+table, th, td {
+   
+    border: none;
+  }
+table{
+  
+  display: flex;
+  text-align: center;
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: rgb(20, 17, 17);
+  text-transform: uppercase;
+  background-color: rgb(205, 207, 209);
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+td{
+  text-align: center;
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+font-weight: bolder;
+  font-size: 15px;
+  color: #fff;
+  background-color: black;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+td a{
+  color:aqua;
+  cursor: pointer;
+}
+  .data-tables{
+    background-color: rgba(255,255,255,0.3);
+    margin-top: 11rem;
+   
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+ 
+    position: relative;
+    flex-direction: row;
+  }
+
+.data{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  
+  
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+
+@media screen and (max-width:746px) {
+  table{
+    margin-right: 7rem;
+  }
+  table,td,tr,th{
+    padding: 5px;
+  
+    }
+
+}
+@media screen and (max-width:440px) {
+        td{
+          font-size: 11px;
+        }
+        table{
+          margin-left: 2rem;
+        }
+        
+    }

@@ -2,6 +2,7 @@ import React,{  useState }from 'react'
 import "./Main.css"
 import Intro from '../Intro/Intro';
 import {Link} from "react-router-dom"
+import {FaUniversity,FaSchool} from "react-icons/fa"
 const Main = () => {
   const [search,setSearch]=useState("")
 
@@ -12,13 +13,11 @@ const Main = () => {
   return (
     <div className='main'>   
                
-                      <div className="nav-left">
-                      <div className="data-options">
-
-<h4>Univesities</h4>
-<h4>admissionn</h4>
-
-                      <h3>filter with state</h3>
+          <div className="nav-left">
+                <div className="data-options">
+                   <Link to="data-tables"><h4><FaUniversity/>Univesities</h4></Link>
+                    <h4><span><FaSchool/></span> admissionn</h4>
+                    <h3>filter with state</h3>
 <select onChange={ShowOptionhandler} >
         <option value="andhra pradesh">Andhra Pradesh</option>
         <option value="arunachal pradesh">Arunachal Pradesh</option>

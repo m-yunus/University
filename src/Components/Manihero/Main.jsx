@@ -3,72 +3,73 @@ import "./Main.css"
 import Intro from '../Intro/Intro';
 import {Link} from "react-router-dom"
 import {FaUniversity,FaSchool} from "react-icons/fa"
+import { UniversityList } from '../Context/Context';
 const Main = () => {
+  const {data}=UniversityList()
   const [search,setSearch]=useState("")
-
+  const[optionValue,setOptionValue]=useState("")
+  const [searchedItems,setSearchedItems]=useState([])
   function ShowOptionhandler(event){
-    setSearch(event.target.value)
+  setOptionValue(event.target.value)
+  const OptionFiltered=data.filter(items=>{
+    return items?.["state-province"] === optionValue
+  })
+  setSearchedItems(OptionFiltered)
   } 
-  
+  console.log(searchedItems);
   return (
-    <div className='main'>   
-               
+    <div className='main'>                
           <div className="nav-left">
                 <div className="data-options">
-                   <Link to="data-tables"><h4><FaUniversity/>Univesities</h4></Link>
+                   <h4><FaUniversity/>Univesities</h4>
                     <h4><span><FaSchool/></span> admissionn</h4>
                     <h3>filter with state</h3>
-<select onChange={ShowOptionhandler} >
-        <option value="andhra pradesh">Andhra Pradesh</option>
-        <option value="arunachal pradesh">Arunachal Pradesh</option>
-        <option value="assam">Assam</option>
-        <option value="bihar">Bihar</option>
-        <option value="chhattisgarh">Chhattisgarh</option>
-        <option value="gujarat">Gujarat</option>
-        <option value="haryana">Haryana</option>
-        <option value="himachal pradesh">Himachal Pradesh</option>
-        <option value="jammu and kashmir">Jammu and Kashmir</option>
-        <option value="goa">Goa</option>
-        <option value="goa">Goa</option>
-        <option value="karnataka">Karnataka</option>
-        <option value="kerala">Kerala</option>
-        <option value="MP">Madhya Pradesh</option>
-        <option value="MH">Maharashtra</option>
-        <option value="MN">Manipur</option>
-        <option value="ML">Meghalaya</option>
-        <option value="MZ">Mizoram</option>
-        <option value="NL">Nagaland</option>
-        <option value="OR">Odisha</option>
-        <option value="punjab">Punjab</option>
-        <option value="rajasthan">Rajasthan</option>
-        <option value="sikkim">Sikkim</option>
-        <option value="tamil nadu">Tamil Nadu</option>
-        <option value="telangana">Telangana</option>
-        <option value="tripura">Tripura</option>
-        <option value="uttarakhand">Uttarakhand</option>
-        <option value="UP">Uttar Pradesh</option>
-        <option value="WB">West Bengal</option>
-        <option value="AN">Andaman and Nicobar Islands</option>
-        <option value="CH">Chandigarh</option>
-        <option value="DN">Dadra and Nagar Haveli</option>
-        <option value="DD">Daman and Diu</option>
-        <option value="DL">Delhi</option>
-        <option value="LD">Lakshadweep</option>
-        <option value="PY">Puducherry</option>
-</select>
-                
-</div>
-                     </div>
-                     <div className="nav-right">
-                              
-                         
+                            <select onChange={ShowOptionhandler} >
+                                    <option value="Andhra pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal pradesh">Himachal Pradesh</option>
+                                    <option value="Jammu and kashmir">Jammu and Kashmir</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="WestBengal">West Bengal</option>
+                                    <option value="Andaman and ">Andaman and Nicobar Islands</option>
+                                    <option value="Chandigarh">Chandigarh</option>
+                                    <option value="Dadra and Nagar">Dadra and Nagar Haveli</option>
+                                    <option value="DD">Daman and Diu</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Lakshadweep">Lakshadweep</option>
+                                    <option value="Puducherry">Puducherry</option>
+                              </select>                
+                  </div>
+            </div>
+                            <div className="nav-right">                        
                                     <ul className='nav-list'>
-                                      <Link to="/signup" > <button>signup</button></Link>
-                                    </ul>
-                            
-                            <Intro search={search} setSearch={setSearch}/>
-                     </div>
-    </div>
+                                        <Link to="/signup" > <button>signup</button></Link>
+                                    </ul>                           
+                                       <Intro search={search} setSearch={setSearch}  searchedItems={searchedItems} setSearchedItems={setSearchedItems}/>
+                             </div>
+        </div>
   )
 }
 

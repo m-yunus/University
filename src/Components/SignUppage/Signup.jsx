@@ -1,4 +1,4 @@
-import React, { useEffect, useState,} from 'react'
+import React,{useState} from 'react'
 import "./Signup.css"
 import {Link} from "react-router-dom"
 import {useNavigate } from 'react-router-dom';
@@ -37,13 +37,8 @@ const Signup = () => {
   function handleSubmit(event){
     event.preventDefault();
     setErrors(validate(formdata))
-   console.log(errors);
-   setSubmit(true)
-  
-
+   setSubmit(true) 
   }
-  
-
   return (
     <div className="split-screen">
         <div className="left">
@@ -84,13 +79,10 @@ const Signup = () => {
                     </label>
                   </div>
                   {Object.keys(errors).length===0 && issubmit ?(<div>Signed in successfully</div>):(null)}
-              <button className='signup-btn'  type='submit' onClick={Object.keys(errors).length===0 && issubmit ?navigate("/"):null}>Sign Up</button>
-                   
+              <button className='signup-btn'  type='submit' onClick={Object.keys(errors).length===0 && issubmit ?navigate("/"):null}>Sign Up</button>                  
           </form>
-
          </div>
     </div>
   )
 }
-
 export default Signup

@@ -30,3 +30,8 @@ visibility: visible;
     display: flex;
 visibility: hidden;
 }
+@media screen and (max-width:745px) {
+    .pagination{
+        margin-left: -8rem;
+    }
+}

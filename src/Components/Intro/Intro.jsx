@@ -1,35 +1,32 @@
-import React, { useEffect,useRef, useState } from 'react'
+import React, { useEffect,useRef } from 'react'
 import "./intro.css"
 import {init} from "ityped"
 import ItemData from '../ItemData/ItemData';
 import { UniversityList } from '../Context/Context'
-const Intro = ({search,setSearch}) => {
+const Intro = ({search,setSearch,searchedItems,setSearchedItems}) => {
     const textref=useRef()
-    const{loading,data}=UniversityList()
-    
-    const [searchedItems,setSearchedItems]=useState([])
-        function setSearchhandler(){
-                   const FilteredItems=data.filter((items,i)=>
-          { 
-            return (
-              (
-                items.name.toLowerCase().includes(search) ||
-                 items["state-province"]?.toLowerCase().includes(search)      
-                 )&& i<=403
-                 )
-            
-          }  
+    const{loading,data}=UniversityList()   
+  function setSearchhandler(){
+      const FilteredItems=data.filter((items,i)=>
+                 { 
+                    return (
+                      (
+                        items.name.toLowerCase().includes(search) ||
+                        items["state-province"]?.toLowerCase().includes(search)      
+                        )
+                        )          
+                  }  
         )
           setSearchedItems(FilteredItems)   
     }
-    console.log(search,searchedItems);
-  useEffect(()=>{
-      init(textref.current,{
-        showCursor:false,
-        backDelay:1500,
-        strings:["10000+ UNIVERSITIES ","TEN THOUSAND+ UNIVERSITIES ","250+ EXAMS "," 1 LAKH REVIEWS"]
-      })
-  },[])
+    console.log(searchedItems);
+      useEffect(()=>{
+          init(textref.current,{
+            showCursor:false,
+            backDelay:1500,
+            strings:["1000+ UNIVERSITIES ","250+ EXAMS "," 1 LAKH REVIEWS"]
+          })
+      },[])
   return (
     <div className='intro' style={loading?{visibility:"hidden"}:{visibility:"visible"}}>
           <div className="ityped-intro">

@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./Login.css"
-
 const SignUp = () => {
-
-  const [logindata,setLoginData]=useState({
-    
+  const [logindata,setLoginData]=useState({  
     email:"",
     password:""
   })
@@ -14,8 +11,7 @@ const SignUp = () => {
   const[issubmit,setSubmit]=useState(false)
   function validate(values){
     const errors={}
-      const regex= /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i
-     
+      const regex= /^[ ]*([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})[ ]*$/i 
       if(!values.email){
         errors.email="Email is Required"
       }
@@ -35,13 +31,9 @@ const SignUp = () => {
   }
   function handleLoginSubmit(event){
     event.preventDefault();
-    setErrors(validate(logindata))
-   console.log(errors);
+    setErrors(validate(logindata)) 
    setSubmit(true)
-  
-
   }
-
   return (
     <div className="split-screen">
         <div className="login-left">
@@ -54,11 +46,9 @@ const SignUp = () => {
           <form action="" onClick={handleLoginSubmit}>
               <section className='copy'>
                       <h2>LOG IN</h2>
-                  <div className="login-container">
-                     
+                  <div className="login-container">                   
                   </div>
-              </section>
-                 
+              </section>                
                   <div className="input-container email">
                       <label htmlFor="email">Email</label>
                       <input id='email' name='email' type="email" value={logindata.email} onChange={handleLoginChange}/>
@@ -68,16 +58,11 @@ const SignUp = () => {
                       <label htmlFor="password">Password</label>
                       <input id='password' name='password' type="password" value={logindata.password} onChange={handleLoginChange}/>
                       {errors.password && <p>{errors.password}</p>}
-                  </div>
-                  
-               
-                    <button  onClick={Object.keys(errors).length===0 && issubmit ?navigates("/"):null} className='signup-btn' type='submit'>Login</button>
-                   
+                  </div>         
+                    <button  onClick={Object.keys(errors).length===0 && issubmit ?navigates("/"):null} className='signup-btn' type='submit'>Login</button>                 
           </form>
-
          </div>
     </div>
   )
 }
-
 export default SignUp

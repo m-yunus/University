@@ -76,7 +76,16 @@ body{
           font-size: 11px;
         }
         table{
-          margin-left: 2rem;
+          margin-left: -2rem;
         }
         
     }
+    @media screen and (max-width:392px) {
+      td{
+        font-size: 9px;
+      }
+      table{
+        margin-left: 0.9rem;
+      }
+      
+  }

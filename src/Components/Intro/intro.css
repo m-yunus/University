@@ -43,6 +43,19 @@
     border-color: black;
 
 }
+.search_bar button{
+    background: #f90d5d;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+.search_bar button:hover{
+    background: #f95a04;
+    color: rgb(13, 13, 13);
+    
+}
 @media screen and(max-width:392px){
     .serchbar-input{
         width: 11rem;

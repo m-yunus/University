@@ -26,7 +26,6 @@ const SignUp = () => {
   function handleLoginChange(event){
       const {name,value}=event.target;
       setLoginData({...logindata,[name]:value})
-      console.log(logindata);
       setErrors(validate({...logindata,[name]:value}))
   }
   function handleLoginSubmit(event){

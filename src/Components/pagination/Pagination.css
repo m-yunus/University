@@ -19,6 +19,10 @@ transition: all ease 0.3s;
 padding: 8px;
 visibility: visible;
 }
+.pagination .active{
+    background: black;
+    color: white;
+}
 .pagination li:hover{
     background-color: orange;
 }

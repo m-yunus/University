@@ -19,7 +19,6 @@ const Intro = ({search,setSearch,searchedItems,setSearchedItems}) => {
         )
           setSearchedItems(FilteredItems)   
     }
-    console.log(searchedItems);
       useEffect(()=>{
           init(textref.current,{
             showCursor:false,

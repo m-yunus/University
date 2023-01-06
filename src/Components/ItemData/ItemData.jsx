@@ -9,7 +9,6 @@ const ItemData = ({searchedItems,search,setSearch}) => {
     const[currentPage,setCurrentPage]=useState(1)
     const[showlist,setShowList]=useState([])
     const ItemsperPage=50.7 
-    console.log("this is",search,data);
           useEffect(()=>{
           let indexOflastList=currentPage * ItemsperPage
           let indexOfFirstList=indexOflastList - ItemsperPage
@@ -50,7 +49,7 @@ const ItemData = ({searchedItems,search,setSearch}) => {
                                 {searchedItems.length!==0 ? Searchlist:Datareceived}
                                 </tbody>
                         </table>
-                        <Pagination ItemsperPage={ItemsperPage} setCurrentPage={setCurrentPage} searchedItems={searchedItems} search={search}/> 
+                        <Pagination ItemsperPage={ItemsperPage} setCurrentPage={setCurrentPage} currentPage={currentPage} searchedItems={searchedItems} search={search}/> 
                   </div>
                   
                  

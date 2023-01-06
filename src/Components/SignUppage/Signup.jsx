@@ -31,7 +31,6 @@ const Signup = () => {
   function handleChange(event){
       const {name,value}=event.target;
       setFormData({...formdata,[name]:value})
-      console.log(formdata);
       setErrors(validate({...formdata,[name]:value}))
   }
   function handleSubmit(event){

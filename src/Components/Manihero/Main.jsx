@@ -17,7 +17,6 @@ const Main = () => {
   setSearchedItems(OptionFiltered)
   return searchedItems
   } 
-  console.log(searchedItems);
   return (
     <div className='main'>                
           <div className="nav-left">
@@ -53,11 +52,11 @@ const Main = () => {
                                     <option value="Tripura">Tripura</option>
                                     <option value="Uttarakhand">Uttarakhand</option>
                                     <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                    <option value="WestBengal">West Bengal</option>
+                                    <option value="West Bengal">West Bengal</option>
                                     <option value="Andaman and ">Andaman and Nicobar Islands</option>
                                     <option value="Chandigarh">Chandigarh</option>
                                     <option value="Dadra and Nagar">Dadra and Nagar Haveli</option>
-                                    <option value="DD">Daman and Diu</option>
+                                    <option value="Dehradun">Dehradun</option>
                                     <option value="Delhi">Delhi</option>
                                     <option value="Lakshadweep">Lakshadweep</option>
                                     <option value="Puducherry">Puducherry</option>

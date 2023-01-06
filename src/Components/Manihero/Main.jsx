@@ -7,14 +7,15 @@ import { UniversityList } from '../Context/Context';
 const Main = () => {
   const {data}=UniversityList()
   const [search,setSearch]=useState("")
-  const[optionValue,setOptionValue]=useState("")
   const [searchedItems,setSearchedItems]=useState([])
   function ShowOptionhandler(event){
-  setOptionValue(event.target.value)
+  let Optiondata=event.target.value
   const OptionFiltered=data.filter(items=>{
-    return items?.["state-province"] === optionValue
+    
+     return items["state-province"] === Optiondata
   })
   setSearchedItems(OptionFiltered)
+  return searchedItems
   } 
   console.log(searchedItems);
   return (
@@ -47,7 +48,7 @@ const Main = () => {
                                     <option value="Punjab">Punjab</option>
                                     <option value="Rajasthan">Rajasthan</option>
                                     <option value="Sikkim">Sikkim</option>
-                                    <option value="Tamil nadu">Tamil Nadu</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
                                     <option value="Telangana">Telangana</option>
                                     <option value="Tripura">Tripura</option>
                                     <option value="Uttarakhand">Uttarakhand</option>
@@ -60,8 +61,9 @@ const Main = () => {
                                     <option value="Delhi">Delhi</option>
                                     <option value="Lakshadweep">Lakshadweep</option>
                                     <option value="Puducherry">Puducherry</option>
-                              </select>                
-                  </div>
+                              </select> 
+                              {searchedItems.length===0 && <p style={{color:"red",fontSize:"13px"}}> not found in database</p>}               
+                  </div>                
             </div>
                             <div className="nav-right">                        
                                     <ul className='nav-list'>

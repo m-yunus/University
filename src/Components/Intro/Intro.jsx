@@ -7,6 +7,10 @@ const Intro = ({search,setSearch,searchedItems,setSearchedItems}) => {
     const textref=useRef()
     const{loading,data}=UniversityList()   
   function setSearchhandler(){
+    if(search.length===0){
+      setSearchedItems([])
+      return 
+    }
       const FilteredItems=data.filter((items,i)=>
                  { 
                     return (

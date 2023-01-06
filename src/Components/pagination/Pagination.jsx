@@ -1,11 +1,10 @@
 import React from 'react'
 import { UniversityList } from '../Context/Context'
 import "./Pagination.css"
-const Pagination = ({ItemsperPage,currentPage,setCurrentPage,searchedItems,search}) => {
+const Pagination = ({ItemsperPage,currentPage,setCurrentPage,searchedItems}) => {
       const {data}=UniversityList()     
       const no_ofpages=[]
-      
-    for(let i =1;i<Math.ceil(data.length / ItemsperPage); i++) {
+    for(let i =1;i<=Math.ceil(data.length / ItemsperPage); i++) {
       no_ofpages.push(i)
     }
               function ShowNextPage(event){               

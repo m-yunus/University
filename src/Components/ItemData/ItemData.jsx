@@ -4,18 +4,19 @@ import { UniversityList } from '../Context/Context'
 import Pagination from '../pagination/Pagination'
 import "./ItemData.css"
 
-const ItemData = ({searchedItems,search,setSearch}) => {
+const ItemData = ({searchedItems,search}) => {
     const {data}=UniversityList()
     const[currentPage,setCurrentPage]=useState(1)
     const[showlist,setShowList]=useState([])
-    const ItemsperPage=50.7 
+    const ItemsperPage=50
           useEffect(()=>{
           let indexOflastList=currentPage * ItemsperPage
           let indexOfFirstList=indexOflastList - ItemsperPage
           let showlists=data.slice(indexOfFirstList,indexOflastList)
-          setShowList(showlists)
-        },[currentPage])
-     const Datareceived=showlist.map((items,index)=>{   
+          setShowList(showlists)        
+        },[currentPage,searchedItems])
+     const Datareceived=()=>{
+     return showlist.map((items,index)=>{   
             return (
                 <tr key={index}>
                      <td>{items.name}</td>
@@ -24,9 +25,10 @@ const ItemData = ({searchedItems,search,setSearch}) => {
                      <td><a href={items?.web_pages}>{items?.domains}</a></td>
                 </tr>     
                    )
-             })  
-    const Searchlist=searchedItems.map((list,index)=>{
-        
+             })    
+            }
+    const Searchlist=()=>{
+      return searchedItems.map((list,index)=>{        
       return (
         <tr key={index}>
              <td>{list.name}</td>
@@ -36,6 +38,7 @@ const ItemData = ({searchedItems,search,setSearch}) => {
         </tr>     
     )
     })
+  }
   return (      
                 <div className="data-tables">
                         <table>
@@ -46,15 +49,11 @@ const ItemData = ({searchedItems,search,setSearch}) => {
                                 <th>State</th>
                                 <th>Website</th>
                             </tr>                              
-                                {searchedItems.length!==0 ? Searchlist:Datareceived}
+                                {searchedItems.length===0 ?Datareceived(): Searchlist()}
                                 </tbody>
                         </table>
                         <Pagination ItemsperPage={ItemsperPage} setCurrentPage={setCurrentPage} currentPage={currentPage} searchedItems={searchedItems} search={search}/> 
-                  </div>
-                  
-                 
-     
+                  </div>    
   )
 }
-
 export default ItemData
